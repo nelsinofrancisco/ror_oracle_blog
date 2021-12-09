@@ -46,7 +46,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Run Tests
 
-- TBI
+- Run `rails spec`.
 
 ## Authors
 
