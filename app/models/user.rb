@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :comments, :foreign_key => :author_id
 
   def recent_posts
-    posts = Post.where(author_id: id)
+    posts = Post.where(author_id: self.id)
     posts.order(created_at: :desc).limit(3)
   end
 end

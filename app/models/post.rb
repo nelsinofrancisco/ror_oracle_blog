@@ -5,13 +5,13 @@ class Post < ApplicationRecord
 
 
   def update_posts_count
-    user = User.find(author_id)
-    posts_count = Posts.where(author_id: author_id).count
+    user = User.find(self.author_id)
+    posts_count = Posts.where(author_id: self.author_id).count
     user.update(posts_counter: posts_count)
   end
 
   def recent_comments
-    comments = Comment.where(post_id: id)
+    comments = Comment.where(post_id: self.id)
     comments.order(created_at: :desc).limit(5)
   end
 end
