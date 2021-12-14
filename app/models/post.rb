@@ -2,9 +2,10 @@ class Post < ApplicationRecord
   belongs_to :user, foreign_key: :author_id, inverse_of: :posts
   has_many :likes
   has_many :comments
+  after_save :update_posts_count
 
   def update_posts_count
-    user.update(posts_counter: user.posts.count)
+    user.increment!(:posts_counter)
   end
 
   def recent_comments
