@@ -3,6 +3,8 @@ class Comment < ApplicationRecord
   belongs_to :post, inverse_of: :comments
   after_save :update_comments_count
 
+  private
+
   def update_comments_count
     post.increment!(:comments_counter)
   end
