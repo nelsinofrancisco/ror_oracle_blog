@@ -31,8 +31,10 @@ To get a local copy up and running follow these simple example steps.
   - With you preffered IDE open the folder that you cloned before;
 - Configuring DB access:
   - Inside the database.yml file modify the Env variables for getting the username and password to access psql database;
-- Creating DB (if needed):
-  - Run `rails db:create` to create a empty databse for the project.   
+- Creating DB:
+  - Run `rails db:create` to create a empty databse for the project.
+  - Run `rails db:migrate` for creating the project tables.
+  - If you want, you can run `rails db:seed` to create default values for the tables: Users, comments, likes, posts.   
   
 ### Run Website  
 
