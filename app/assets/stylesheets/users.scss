@@ -14,7 +14,7 @@
 
 .fs-9 {
   font-size: 9px;
-} 
+}
 
 .fs-12 {
   font-size: 12px;
@@ -34,7 +34,7 @@
 
 .justify-space-between {
   justify-content: space-between;
-} 
+}
 
 .flex-column {
   flex-direction: column;
@@ -57,7 +57,8 @@
   padding: 1rem;
 }
 
-.minimum-margin, .margin-right-025 {
+.minimum-margin,
+.margin-right-025 {
   margin-right: 0.25rem;
 }
 
@@ -115,20 +116,28 @@
   text-align: left;
 }
 
-.default-btn, .pagy-btn, .pagy-page-btn, .pagy-btn-disabled, .pagy-page-btn-disabled {
+.default-btn,
+.pagy-btn,
+.pagy-page-btn,
+.pagy-btn-disabled,
+.pagy-page-btn-disabled {
   background-color: transparent;
   border: 2px solid #222;
   box-shadow: 2px 2px 1.5px 1px #444;
   cursor: pointer;
 }
 
-.pagy-btn, .pagy-page-btn, .pagy-btn-disabled, .pagy-page-btn-disabled {
+.pagy-btn,
+.pagy-page-btn,
+.pagy-btn-disabled,
+.pagy-page-btn-disabled {
   padding: 0.25rem;
   border: 1px solid #222;
   box-shadow: 1px 1px 1px 1px #444;
 }
 
-.pagy-page-btn, .pagy-page-btn-disabled {
+.pagy-page-btn,
+.pagy-page-btn-disabled {
   background-color: rgb(88, 220, 243);
   color: rgb(114, 113, 113);
 }
@@ -143,11 +152,12 @@
 }
 
 .pagy-link {
-  text-decoration: none!important;
-  color: #000!important;
+  text-decoration: none !important;
+  color: #000 !important;
   cursor: pointer;
 }
 
-.p-05, .default-btn {
+.p-05,
+.default-btn {
   padding: 0.5rem;
 }
