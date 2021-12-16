@@ -1,7 +1,0 @@
-<div class="usersList">
-  <% User.all.each do |user| %>
-    <%= link_to "/users/#{user.id}", :action => 'go' do %>
-      <%= render partial: "users/cards/user_card", locals: { user: user } %>
-    <% end %>
-  <% end %>
-</div>

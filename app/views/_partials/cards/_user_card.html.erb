@@ -1,0 +1,9 @@
+<div class="d-flex mb-2 justify-space-between">
+  <div class="box-1 d-flex justify-content-center align-items-center">
+    <img class="user-img"  src=<%= image_path 'default_user.png' %>>
+  </div>
+  <div class="d-flex box-1 justify-space-between design-problem align-items-center">
+    <h2 class="title-style-1 fs-24 text-none"><%= format_user_name(user.name) %></h2>
+    <h2 class="align-self-end fs-12 text-none">Number of posts: <%= user.posts_counter%></h2>
+  </div>
+</div>
