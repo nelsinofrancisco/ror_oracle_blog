@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.link-to-default {
+  text-decoration: none !important;
+  color: black;
+}
+
+.link-to-default:visited {
+  color: black;
+}
