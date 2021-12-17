@@ -10,12 +10,16 @@ module PostsHelper
       end
     end
 
+    concat(render partial: '_partials/navbar/nav')
+
     render partial: '_partials/user_full_posts',
            locals: { user: @user, posts: @all_posts, posts_text: all_posts_text }
   end
 
   def render_post
     return content_tag(:h1, "This post doesn't exist yet") unless @post
+
+    concat(render partial: '_partials/navbar/nav')
 
     concat(render(partial: '_partials/cards/post_card', locals: { post: @post, text: @post.text }))
 
