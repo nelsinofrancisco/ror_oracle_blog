@@ -1,7 +1,12 @@
-<div class="post-list">
+<div>
   <% posts.each_with_index do |post, index| %>
-    <%= link_to user_post_path(post.author_id, post.id), :action => 'go', class: 'link-to-default' do %>
-      <%= render partial: "_partials/cards/post_card", locals: { post: post, text: posts_text[index] } %>
-    <% end %>
+    <div class="post-list">
+      <%= link_to user_post_path(post.author_id, post.id), :action => 'go', class: 'link-to-default' do %>
+      <%= render partial: "_partials/cards/post_card", locals: { post: post, text: posts_text[index]} %>
+      <% end %>
+      <%= render partial: "_partials/cards/comment_card", locals: { post: post, url: url }%>
+      <%= render partial: '_partials/forms/like_form' , locals: {url: url , post_id: post.id} %>
+      <%= render partial: '_partials/forms/comment_form', locals: { post_id: post.id, url: url } %>
+    </div>
   <% end %>
 </div>

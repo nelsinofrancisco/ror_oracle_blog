@@ -1,12 +1,12 @@
-<div class="d-flex justify-content-center flex-column align-items-center">
+<div class="d-flex flex-column align-items-center justify-content-center">
   <div class="users-list">
     <%= render partial: '_partials/cards/user_card', locals: { user: user}%>
     <div class="d-flex flex-column justify-content-center box-1 mb-1">
       <h2 class="title-style-1 fs-16 mb-1">Bio</h2>
       <p><%=user.bio%></p>
     </div>
-    <%= render partial: '_partials/lists/list_post', locals: { posts: posts, posts_text: posts_text, url: url }%>
+    <%= render partial: '_partials/forms/post_form', locals: { user: user, url: url } %>
+    <%= render partial: '_partials/lists/list_post_comments', locals: { posts: posts, posts_text: posts_text, url: url }%>
     <%= render partial: '_partials/buttons/see_all', locals: { user: user } %>
   </div>
 </div>
-    

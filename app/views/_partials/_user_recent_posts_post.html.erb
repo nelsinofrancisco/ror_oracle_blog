@@ -5,6 +5,7 @@
       <h2 class="title-style-1 fs-16 mb-1">Bio</h2>
       <p><%=user.bio%></p>
     </div>
+    <%= render partial: '_partials/forms/post_form', locals: { user: user, url: url } %>
     <%= render partial: '_partials/lists/list_post', locals: { posts: posts, posts_text: posts_text, url: url }%>
     <%= render partial: '_partials/buttons/see_all', locals: { user: user } %>
   </div>
