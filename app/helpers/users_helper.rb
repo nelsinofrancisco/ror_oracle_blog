@@ -18,4 +18,8 @@ module UsersHelper
     concat(render partial: '_partials/navbar/nav')
     render partial: '_partials/lists/list_users'
   end
+
+  def render_user_new
+    return content_tag :h1, "Page in development" unless @
+  end
 end
