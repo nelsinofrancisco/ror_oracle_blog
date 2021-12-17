@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
   <div class="users-list">
     <% User.all.each do |user| %>
-      <%= link_to users_path(user.id), :action => 'go', class: 'link-to-default' do %>
+      <%= link_to user_path(user.id), :action => 'go', class: 'link-to-default' do %>
         <%= render partial: "_partials/cards/user_card", locals: { user: user } %>
       <% end %>
     <% end %>
