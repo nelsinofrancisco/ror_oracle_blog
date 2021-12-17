@@ -1,0 +1,8 @@
+<%= form_with url: url, scope: :comment, class: 'd-flex align-items-center box-1' do |form| %>
+  <%= form.hidden_field :author_id, value: @logged_user.id %>
+  <%= form.hidden_field :post_id, value: post_id %>
+  <%= form.text_area :text, size: "150x2", placeholder: 'Add a comment...', class: "default-text-area" %>
+  <%= form.submit "Comment", class: 'submit-post-btn' %>   
+
+
+<% end %>

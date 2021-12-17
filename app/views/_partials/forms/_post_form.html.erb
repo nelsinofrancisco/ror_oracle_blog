@@ -1,0 +1,9 @@
+
+<%= form_with url: url, scope: :post, class: 'd-flex flex-column box-1' do |form| %>
+  <%= form.hidden_field :author_id, value: @logged_user.id %>
+  <%= form.hidden_field :comments_counter, value: 0 %>
+  <%= form.hidden_field :likes_counter, value: 0 %>
+  <%= form.text_field :title, placeholder: 'Title of your greteast wisdom so far...', class: 'default-input' %>
+  <%= form.text_area :text, size: "70x5", placeholder: 'Share your wisdom here...', class: 'default-text-area' %>
+  <%= form.submit "Post", class: "submit-post-btn"%>
+<% end %>

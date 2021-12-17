@@ -8,8 +8,13 @@ module UsersHelper
 
     concat(render partial: '_partials/navbar/nav')
 
-    render partial: '_partials/user_recent_posts',
-           locals: { user: @user, posts: @recent_posts, posts_text: recent_posts_text }
+    if @logged_user.id == params[:id].to_i
+      render partial: '_partials/user_recent_posts_post',
+            locals: { user: @user, posts: @recent_posts, posts_text: recent_posts_text, url: user_path }
+    else
+      render partial: '_partials/user_recent_posts',
+            locals: { user: @user, posts: @recent_posts, posts_text: recent_posts_text, url: user_path }
+    end
   end
 
   def render_users
@@ -17,9 +22,5 @@ module UsersHelper
 
     concat(render partial: '_partials/navbar/nav')
     render partial: '_partials/lists/list_users'
-  end
-
-  def render_user_new
-    return content_tag :h1, "Page in development" unless @logged_user
   end
 end
