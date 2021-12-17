@@ -1,11 +1,17 @@
 <div class="d-flex justify-content-center nav-style mb-2">
-  <div class="d-flex justify-space-between users-list">
+  <div class="d-flex justify-space-between users-list p-05">
     <div class="d-flex">
-      <h2>Home</h2>
-      <h2>Your Posts</h2>
+      <%= link_to root_path, class: 'link-to-default' do %>
+        <h2 class="mr-1">Home</h2>
+      <% end %>
+      <%= link_to user_path(@logged_user.id), :action => 'go', class: 'link-to-default' do %>
+        <h2>Your Posts</h2>
+      <% end %>
     </div>
     <div>
-      <button type=""><%= link_to new_user_path(@current_user.id), :action => 'go', class: 'link-to-default' %>Add new Post <%end%></button>
+      <%= link_to new_user_path(@logged_user.id), :action => 'go', class: 'link-to-default' do %>
+        <button type="submit" class="post-btn">see all posts</button>
+      <% end %>
     </div>
   </div>
 </div>
