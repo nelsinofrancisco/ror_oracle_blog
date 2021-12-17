@@ -24,6 +24,10 @@
   display: flex;
 }
 
+.d-inline-flex {
+  display: inline-flex;
+}
+
 .justify-content-center {
   justify-content: center;
 }
@@ -120,7 +124,8 @@
 .pagy-btn,
 .pagy-page-btn,
 .pagy-btn-disabled,
-.pagy-page-btn-disabled {
+.pagy-page-btn-disabled,
+.submit-post-btn {
   background-color: transparent;
   border: 2px solid #222;
   box-shadow: 2px 2px 1.5px 1px #444;
@@ -130,14 +135,16 @@
 .pagy-btn,
 .pagy-page-btn,
 .pagy-btn-disabled,
-.pagy-page-btn-disabled {
+.pagy-page-btn-disabled,
+.post-btn {
   padding: 0.25rem;
   border: 1px solid #222;
   box-shadow: 1px 1px 1px 1px #444;
 }
 
 .pagy-page-btn,
-.pagy-page-btn-disabled {
+.pagy-page-btn-disabled,
+.post-btn {
   background-color: rgb(88, 220, 243);
   color: rgb(114, 113, 113);
 }
@@ -146,9 +153,19 @@
   background-color: rgb(216, 248, 253);
 }
 
+.submit-post-btn {
+  width: 50%;
+  max-width: 100px;
+}
+
 .pagy-btn-disabled {
   background-color: #eee;
   border: 1px solid #ddd;
+}
+
+.post-btn {
+  background-color: blanchedalmond;
+  color:rgb(37, 37, 37);
 }
 
 .pagy-link {
@@ -162,8 +179,44 @@
   padding: 0.5rem;
 }
 
+.nav-link-style,
+.nav-style {
+  color: rgb(71, 70, 70) !important;
+}
+
 .nav-style {
   background: #ccc;
-  color: rgb(95, 95, 95);
   box-shadow: 0 1px 1px 1px rgb(37, 37, 37);
+}
+
+
+.default-input::placeholder,
+.default-text-area::placeholder {
+  color: black;
+}
+
+.default-input,
+.default-text-area {
+  padding: 0.5rem 0.15rem;
+}
+
+.default-text-area {
+  resize: none;
+}
+
+.default-input:focus,
+.default-text-area:focus {
+  outline: none;
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+
+.post-list {
+  position: relative;
+}
+
+.button-position {
+  position: absolute;
+  top: 2.5%;
+  right: 1%;
 }
