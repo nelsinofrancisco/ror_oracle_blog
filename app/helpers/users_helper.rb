@@ -20,6 +20,6 @@ module UsersHelper
   end
 
   def render_user_new
-    return content_tag :h1, "Page in development" unless @
+    return content_tag :h1, "Page in development" unless @logged_user
   end
 end
