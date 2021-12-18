@@ -22,11 +22,10 @@ class PostsController < ApplicationController
       format.html do
         if @post.save
           flash[:success] = 'Question saved successfully'
-          redirect_back(fallback_location: root_path)
         else
           flash[:error] = 'Error: Question could not be saved'
-          redirect_back(fallback_location: root_path)
         end
+        redirect_back(fallback_location: root_path)
       end
     end
   end
