@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center nav-style mb-2">
+  <div class="d-flex justify-space-between users-list p-05">
+    <div class="d-flex">
+      <%= link_to root_path, class: 'link-to-default nav-link-style' do %>
+        <h2 class="mr-2">Oracle Blog</h2>
+      <% end %>
+      <%= link_to user_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style' do %>
+        <h2>Your Posts</h2>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to new_user_post_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style' do %>
+        <button type="submit" class="post-btn">New Post</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
