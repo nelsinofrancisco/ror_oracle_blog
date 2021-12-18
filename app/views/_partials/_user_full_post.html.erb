@@ -3,6 +3,7 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
   <div class="users-list">
     <div class="post-list">
+      <%= render partial: "_partials/cards/post_card", locals: { post: @current_post, text: @current_post.text} %>
       <%= render partial: '_partials/cards/comment_card', locals: { post: @current_post } %>
       <%= render partial: '_partials/forms/like_form', locals: {url: user_posts_path(params[:user_id]), post_id: @current_post.id } %>
     </div>
