@@ -1,4 +1,4 @@
-<%= form_with url: url, scope: :like, class: 'button-position' do |form| %>
+<%= form_with url: post_likes_path(post_id), scope: :like, class: 'button-position' do |form| %>
   <%= form.hidden_field :author_id, value: @logged_user.id %>
   <%= form.hidden_field :post_id, value: post_id %>
   <%= form.submit "Like", class: 'default-btn' %>
