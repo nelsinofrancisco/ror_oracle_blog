@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def create_models
     @post = Post.new
     @comment = Comment.new
