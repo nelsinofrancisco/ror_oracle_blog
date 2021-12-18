@@ -17,7 +17,7 @@ module PostsHelper
   end
 
   def render_post
-    return content_tag(:h1, "This post doesn't exist yet") unless @post
+    return content_tag(:h1, "This post doesn't exist yet") unless @current_post
 
     render partial: '_partials/user_full_post'
   end
