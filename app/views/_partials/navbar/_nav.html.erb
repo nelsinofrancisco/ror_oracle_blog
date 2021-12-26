@@ -4,13 +4,22 @@
       <%= link_to root_path, class: 'link-to-default nav-link-style' do %>
         <h2 class="mr-2">Oracle Blog</h2>
       <% end %>
-      <%= link_to user_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style' do %>
-        <h2>Your Posts</h2>
-      <% end %>
+      <% if user_signed_in? %>
+        <%= link_to user_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style mr-2' do %>
+          <h2>Your Posts</h2>
+        <% end %>
+        <%= link_to new_user_post_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style' do %>
+          <button type="submit" class="post-btn">New Post</button>
+        <% end %>
+      <% end %>   
     </div>
     <div>
-      <%= link_to new_user_post_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style' do %>
-        <button type="submit" class="post-btn">New Post</button>
+      <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "link-to-default nav-link-style" %>
+        <%= link_to "Profile", edit_user_registration_path, class: "link-to-default nav-link-style" %>
+      <% else %>
+        <%= link_to "Log in",  new_user_session_path, class: "link-to-default nav-link-style" %>
+        <%= link_to "Sign up",  new_user_registration_path, class: "link-to-default nav-link-style" %>
       <% end %>
     </div>
   </div>
