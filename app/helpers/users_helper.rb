@@ -6,7 +6,6 @@ module UsersHelper
       post.text.truncate(100)
     end
 
-
     if @logged_user.id == params[:id].to_i
       render partial: '_partials/user_recent_posts_post',
              locals: { user: @user, posts: @recent_posts, posts_text: recent_posts_text, url: user_path }
