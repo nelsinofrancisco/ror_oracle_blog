@@ -10,8 +10,6 @@ module PostsHelper
       end
     end
 
-    concat(render(partial: '_partials/navbar/nav'))
-
     render partial: '_partials/user_full_posts',
            locals: { user: @user, posts: @all_posts, posts_text: all_posts_text, url: user_posts_path(@user.id) }
   end
@@ -33,7 +31,6 @@ module PostsHelper
       post.text.truncate(100)
     end
 
-    concat(render(partial: '_partials/navbar/nav'))
     render partial: '_partials/user_full_add_post',
            locals: { user: @logged_user, posts: @recent_posts, posts_text: recent_posts_text,
                      url: user_posts_path(@logged_user.id) }
