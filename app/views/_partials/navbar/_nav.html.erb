@@ -9,7 +9,7 @@
           <h2>Your Posts</h2>
         <% end %>
         <%= link_to new_user_post_path(@logged_user.id), :action => 'go', class: 'link-to-default nav-link-style' do %>
-          <button type="submit" class="post-btn">New Post</button>
+          <button type="button" class="post-btn">New Post</button>
         <% end %>
       <% end %>   
     </div>
