@@ -204,10 +204,12 @@
 }
 
 .default-input:focus,
+.default-input,
 .default-text-area:focus {
   outline: none;
-  border: 2px solid gray;
+  border: 1px solid gray;
   border-radius: 3px;
+  box-shadow: 1px 1px 2px 1px #444;
 }
 
 .post-list {
