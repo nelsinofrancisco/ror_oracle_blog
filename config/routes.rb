@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # resources :posts, only: [:create], path: '/users/:user_id/posts/:id'
 
-  resources :users, only: [:index, :show] do
+  resources :users do
     resources :posts
   end
 
