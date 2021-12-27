@@ -4,6 +4,10 @@
 
 // flex properties
 
+.mw-300 {
+  max-width: 250px!important;
+}
+
 .fs-24 {
   font-size: 24px;
 }
@@ -132,6 +136,14 @@
   cursor: pointer;
 }
 
+.cancel-btn-style {
+  background-color: rgb(247, 59, 59);
+  border: 2px solid rgb(240, 143, 143);
+  box-shadow: 2px 2px 1.5px 1px rgb(240, 191, 191);
+  color: white;
+  font-weight: bolder;
+}
+
 .pagy-btn,
 .pagy-page-btn,
 .pagy-btn-disabled,
@@ -190,22 +202,29 @@
 }
 
 .default-input::placeholder,
+.default-input-devise::placeholder,
+.default-text-area-devise::placeholder,
 .default-text-area::placeholder {
   color: black;
 }
 
 .default-input,
+.default-input-devise,
 .default-text-area {
   padding: 0.5rem 0.15rem;
 }
 
-.default-text-area {
+.default-text-area,
+.default-text-area-devise {
   resize: none;
 }
 
 .default-input:focus,
-.default-input,
-.default-text-area:focus {
+.default-input-devise:focus,
+.default-input-devise,
+.default-text-area-devise,
+.default-text-area:focus,
+.default-text-area-devise:focus {
   outline: none;
   border: 1px solid gray;
   border-radius: 3px;
