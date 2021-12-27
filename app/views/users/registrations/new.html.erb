@@ -10,12 +10,12 @@
       <%= f.hidden_field :role, autofocus: true, value: 'user' %>
       <div class="field">
         <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'default-input margin-b-05'  %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'default-input-devise margin-b-05'  %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'default-input margin-b-05'  %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'default-input-devise margin-b-05'  %>
       </div>
 
       <div class="field">
@@ -23,12 +23,12 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: 'default-input margin-b-05'  %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'default-input-devise margin-b-05'  %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'default-input mb-1' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'default-input-devise mb-1' %>
       </div>
 
       <div>
