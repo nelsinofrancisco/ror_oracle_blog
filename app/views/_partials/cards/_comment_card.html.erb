@@ -1,8 +1,17 @@
-<div class="d-flex justify-content-center flex-column align-items-start box-1 margin-top-005">
-  <% post.comments.each do |comment| %>
-    <div class="d-flex justify-content-center margin-b-05">
-      <h2 class="fs-9 mr-1"><%= comment.user.name %>:</h2>
-      <h2 class="fs-9"><%= comment.text %></h2>
+<div class="d-flex justify-content-center flex-column box-1 margin-top-005">
+  <% post.comments.includes(:user).each do |comment| %>
+    <div class="d-flex justify-space-between margin-b-05">
+      <div class="d-flex">
+        <%= link_to user_post_path(post.author_id, post.id), :action => 'go', class: 'link-to-default' do %>
+          <h2 class="fs-9 mr-1"><%= comment.user.name %>:</h2>
+          <h2 class="fs-9"><%= comment.text %></h2>
+        <%end%>
+      </div>
+      <% if can? :destroy, comment %>
+        <%= button_to post_comment_path(post.id, comment.id), method: :delete, class: "delete-btn mr-1 mb-2" do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
