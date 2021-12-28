@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center">
+  <div class="d-flex flex-column users-list">
+
+    <h2 class="mb-1">Change your password</h2>
+
+    <%= form_with url: password_path(resource_name), scope: resource_name, method: :put , class: 'd-flex flex-column' do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
+
+      <div class="mb-1">
+        <%= f.label :password, "New password" %><br />
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+        <% end %>
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'default-input-devise margin-b-05' %>
+      </div>
+
+      <div class="mb-1">
+        <%= f.label :password_confirmation, "Confirm new password" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'default-input-devise margin-b-05' %>
+      </div>
+
+      <div class="mb-1">
+        <%= f.submit "Change my password", class: "submit-post-btn mr-1 mw-300" %>
+      </div>
+    <% end %>
+    <div class="mb-1">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

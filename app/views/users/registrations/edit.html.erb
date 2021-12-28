@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="d-flex flex-column users-list">
+
+    <h2>Profile</h2>
+
+    <%= form_with url: registration_path(resource_name), scope: resource_name, method: :put, class: 'd-flex flex-column' do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.hidden_field :role, autofocus: true, value: @logged_user.role %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.email_field :name, autofocus: true, value: @logged_user.name, class: 'default-input-devise margin-b-05' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :bio %><br />
+        <%= f.text_area :bio, size: "70x5", autofocus: true, value: "#{@logged_user.bio || ""}", class: 'default-text-area margin-b-05' %>
+      </div>
+
+      <div>
+        <%= f.label :email, class: 'margin-b-05' %><br />
+        <%= f.email_field :email, autofocus: true, value: @logged_user.email, class: 'default-input-devise mb-1' %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div class="mb-1">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="mb-1">
+        <%= f.label :password, class: "mb-1" %> <i class="margin-b-05">(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: 'default-input-devise margin-b-05' %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+
+      <div class="mb-1">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'default-input-devise margin-b-05' %>
+      </div>
+
+      <div class="mb-1">
+        <%= f.label :current_password %> <i class="margin-b-05">(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class: 'default-input-devise margin-b-05' %>
+      </div>
+
+      <div class="mb-1">
+        <%= f.submit "Update", class: "submit-post-btn mr-1" %>
+      </div>
+    <% end %>
+
+    <h3 class="margin-b-05">Cancel my account</h3>
+
+    <p class="margin-b-05">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "default-btn cancel-btn-style mr-1 mb-2" %></p>
+  </div>
+</div>
