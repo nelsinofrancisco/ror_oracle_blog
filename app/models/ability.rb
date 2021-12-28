@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -13,7 +11,6 @@ class Ability
     can :create, Post
     can %i[update destroy], Post, author_id: user.id
     can %i[update destroy], Comment, author_id: user.id
-    
 
     return unless user.is? :admin # additional permissions for administrators
 

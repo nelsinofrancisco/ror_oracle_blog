@@ -59,5 +59,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'pagy', '~> 5.6'
 
-gem 'devise'
 gem 'cancancan'
+gem 'devise'
