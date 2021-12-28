@@ -136,7 +136,19 @@
   cursor: pointer;
 }
 
-.cancel-btn-style {
+.pagy-btn,
+.pagy-page-btn,
+.pagy-btn-disabled,
+.pagy-page-btn-disabled,
+.post-btn,
+.delete-btn  {
+  padding: 0.25rem;
+  border: 1px solid #222;
+  box-shadow: 1px 1px 1px 1px #444;
+}
+
+.cancel-btn-style,
+.delete-btn  {
   background-color: rgb(247, 59, 59);
   border: 2px solid rgb(240, 143, 143);
   box-shadow: 2px 2px 1.5px 1px rgb(240, 191, 191);
@@ -144,14 +156,10 @@
   font-weight: bolder;
 }
 
-.pagy-btn,
-.pagy-page-btn,
-.pagy-btn-disabled,
-.pagy-page-btn-disabled,
-.post-btn {
-  padding: 0.25rem;
-  border: 1px solid #222;
-  box-shadow: 1px 1px 1px 1px #444;
+.delete-btn {
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgb(240, 191, 191);
+  cursor: pointer;
 }
 
 .pagy-page-btn,
