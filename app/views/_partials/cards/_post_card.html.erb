@@ -1,8 +1,17 @@
 <div class="d-flex justify-content-center flex-column box-1 mt-1">
+  <%= link_to user_post_path(post.author_id, post.id), :action => 'go', class: 'link-to-default' do %>
   <h2 class="fs-16 mb-1">Post - [<%= post.id %>]</h2>
   <p class="mb-1"><%= text %></p>
-  <div class="d-flex justify-content-end">
-    <h3 class="fs-9 minimum-margin">Comments: <%= post.comments_counter %></h3>
-    <h3 class="fs-9">Likes: <%= post.likes_counter %></h3>
+  <% end %>
+  <div class="d-flex justify-space-between">
+    <% if can? :destroy, post %>
+      <%= button_to user_post_path(post.author_id, post.id), method: :delete, class: "delete-btn mr-1" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <%end%>
+    <div class="d-flex">
+      <h3 class="fs-9 minimum-margin">Comments: <%= post.comments_counter %></h3>
+      <h3 class="fs-9 mr-1">Likes: <%= post.likes_counter %></h3>
+    </div>
   </div>
 </div>

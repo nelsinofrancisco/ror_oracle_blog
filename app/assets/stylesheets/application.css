@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import '@fortawesome/fontawesome-free';
+
 * {
   margin: 0;
   border: 0;
