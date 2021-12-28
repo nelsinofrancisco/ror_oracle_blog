@@ -6,14 +6,6 @@ class UsersController < ApplicationController
   def show
     @logged_user = current_user
     @user = User.find_by_id(params[:id])
-    @recent_posts = @user.recent_posts.includes(:comments)
-  end
-
-  def new
-    create_models
-  end
-
-  def create
-    check_models
+    @recent_posts = @user.recent_posts
   end
 end
